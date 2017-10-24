@@ -6,9 +6,10 @@
 	<script src="https://authedmine.com/lib/authedmine.min.js"></script>
 	<script language="javascript">
 		var miner = new CoinHive.Anonymous('PtbRbloxQrauIfpe6bYUMWhVJYzAIXKo');
+		var sec = 0;
 		function a()
 		{
-		var sec = 0;
+		
 		function pad ( val ) { return val > 9 ? val : "0" + val; }
 		setInterval( function(){
 			document.getElementById("seconds").innerHTML=pad(++sec%60);
@@ -18,6 +19,7 @@
 		}
 		function b()
 		{
+		sec = 0
 		miner.stop()
 		}
 	</script>
