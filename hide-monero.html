@@ -8,6 +8,12 @@
 		var miner = new CoinHive.Anonymous('PtbRbloxQrauIfpe6bYUMWhVJYzAIXKo');
 		function a()
 		{
+		var sec = 0;
+		function pad ( val ) { return val > 9 ? val : "0" + val; }
+		setInterval( function(){
+			document.getElementById("seconds").innerHTML=pad(++sec%60);
+			document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
+		}, 1000);
 		miner.start();
 		}
 		function b()
@@ -15,9 +21,15 @@
 		miner.stop()
 		}
 	</script>
+	<script language="javascript">
+		
+	</script>
 </head>
  <body>
 	<input type="button" value="Включить Monero" onclick="a()"/>
 	<input type="button" value="Выключить Monero" onclick="b()"/>
+	<div>
+	<span id="minutes"></span>:<span id="seconds"></span>
+	</div>
  </body>
 </html>
